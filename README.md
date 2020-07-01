@@ -2,6 +2,7 @@
 Repo for Tso et al (2020) paper / thesis chapter 5
 
 How to cite: 
+
 Tso et al. (2020) Integrated hydrogeophysical modelling and data assimilation for geoelectrical leak detection. *Journal of Contaminant Hydrology*
 
 Tso C-HM (2019) Enhancing the information content of geophysical data for nuclear site characterisation. PhD thesis. Lancaster University.
