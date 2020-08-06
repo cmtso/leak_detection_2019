@@ -13,10 +13,10 @@ Tso C-HM (2019) Enhancing the information content of geophysical data for nuclea
 
 ### Example folders
 
-| Folder   | Figure in paper|  Location |
-|----------|:--------------:|--------------------------:|---------------------------------------------------------------------------------:|
+| Folder   | Figure in paper|  Location                 | Description                                                                      |
+|----------|:--------------:|:-------------------------:|:--------------------------------------------------------------------------------:|
 | SLqloc2  |    Fig XX      |        Synthetic          | Problem Estimating (x,y) of leak location, solute loading                        |
-| col 2 is |    Fig XX      |   Hatfield, Yorkshire, UK | Estimating (x,y) of leak location, solute loading, Archie parameters, K etc.     |
+|          |    Fig XX      |   Hatfield, Yorkshire, UK | Estimating (x,y) of leak location, solute loading, Archie parameters, K etc.     |
 
 XX is an example for running Morris sensitivity analysis as in Fig. XX (scroll down for details).
 
