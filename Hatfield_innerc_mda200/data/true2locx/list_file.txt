@@ -1,0 +1,9 @@
+8
+604800.0000		hatfield.srv		hatfield.sig	###	7   
+777600.0000		hatfield.srv		hatfield.sig	###	9   
+864000.0000		hatfield.srv		hatfield.sig	###	10   
+1296000.0000		hatfield.srv		hatfield.sig	###	15   
+1555200.0000		hatfield.srv		hatfield.sig	###	18   
+1814400.0000		hatfield.srv		hatfield.sig	###	21   
+2332800.0000		hatfield.srv		hatfield.sig	###	27   
+3542400.0000		hatfield.srv		hatfield.sig	###	41   

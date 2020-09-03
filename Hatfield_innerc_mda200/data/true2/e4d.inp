@@ -1,0 +1,7 @@
+2			            run mode
+hatfield.1.node 	    mesh configuration file name
+hatfield.srv	  	      survey file
+hatfield.sig  		      conductivity file
+archies.txt       #archies law and temperature effect parameter file
+list_file.txt     #list of surveys to simulate and survey times
+	

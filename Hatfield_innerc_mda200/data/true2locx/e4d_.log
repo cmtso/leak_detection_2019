@@ -1,0 +1,359 @@
+ INITIALIZING E4D: FOUND e4d.inp
+ The specified mesh file is: hatfield.1.node
+ The specified survey file is: hatfield.srv
+ The specified conductivity list file is: hatfield.sig
+ The specified FMN (Archies parameter) file is: archies.txt
+ The specified conductivity list file is: list_file.txt
+ Number of electrodes:           72
+ E4D internal mesh translation file: hatfield.trn
+ The number of measurements per survey is:         3108
+ Number of conductivity values:        46842
+ Number of FMN values:        46482
+ Number of E4D Times:            8
+    1     604800.  hatfield.srv                              hatfield.sig                            
+    1     777600.  hatfield.srv                              hatfield.sig                            
+    1     864000.  hatfield.srv                              hatfield.sig                            
+    1    1296000.  hatfield.srv                              hatfield.sig                            
+    1    1555200.  hatfield.srv                              hatfield.sig                            
+    1    1814400.  hatfield.srv                              hatfield.sig                            
+    1    2332800.  hatfield.srv                              hatfield.sig                            
+    1    3542400.  hatfield.srv                              hatfield.sig                            
+ Read Input Complete___________________________________
+ E4D mesh node file: hatfield.1.node
+ E4D mesh node file: hatfield.1.ele
+ ________________PF MESH PARAMETERS___________________
+ NX, NY, NZ:           30          33          32
+ xmin  xmax:   -11.0000000       19.0000000    
+ ymin  ymax:   -11.0000000       22.0000000    
+ zmin  zmax:   -16.0000000       0.00000000    
+
+ Total number of mapping weights:       534834
+ Rank            1 :        95803
+ Rank            2 :       110029
+ Rank            3 :       107755
+ Rank            4 :       108419
+ Rank            5 :       112828
+
+ Done setting up forward run ......
+     Number of nodes:         8124
+     Number of elements:        46842
+ Setup Forward Complete___________________________________
+ Setup Phase Complete___________________________________
+ Received Time:    864.00000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ No E4D survey found for pflotran time:    864.00000000000000     
+ Received Time:    2592.0000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ No E4D survey found for pflotran time:    2592.0000000000000     
+ Received Time:    6048.0000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ No E4D survey found for pflotran time:    6048.0000000000000     
+ Received Time:    12960.000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ No E4D survey found for pflotran time:    12960.000000000000     
+ Received Time:    26784.000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ No E4D survey found for pflotran time:    26784.000000000000     
+ Received Time:    54432.000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ No E4D survey found for pflotran time:    54432.000000000000     
+ Received Time:    109728.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ No E4D survey found for pflotran time:    109728.00000000000     
+ Received Time:    220320.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ No E4D survey found for pflotran time:    220320.00000000000     
+ Received Time:    441504.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ No E4D survey found for pflotran time:    441504.00000000000     
+ Received Time:    604800.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ Executing E4D Simulation for Time:    604800.00000000000     
+ Received Time:    691200.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.651850998    
+ No E4D survey found for pflotran time:    691200.00000000000     
+ Received Time:    691284.37500000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.739262462    
+ No E4D survey found for pflotran time:    691284.37500000000     
+ Received Time:    691368.75000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.817366183    
+ No E4D survey found for pflotran time:    691368.75000000000     
+ Received Time:    691453.12500000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.887573779    
+ No E4D survey found for pflotran time:    691453.12500000000     
+ Received Time:    691537.50000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428      0.951024950    
+ No E4D survey found for pflotran time:    691537.50000000000     
+ Received Time:    691621.87500000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.00865030    
+ No E4D survey found for pflotran time:    691621.87500000000     
+ Received Time:    691706.25000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.06121695    
+ No E4D survey found for pflotran time:    691706.25000000000     
+ Received Time:    691875.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.15362346    
+ No E4D survey found for pflotran time:    691875.00000000000     
+ Received Time:    692212.50000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.29991043    
+ No E4D survey found for pflotran time:    692212.50000000000     
+ Received Time:    692323.87500000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.33965361    
+ No E4D survey found for pflotran time:    692323.87500000000     
+ Received Time:    692546.62500000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.40952682    
+ No E4D survey found for pflotran time:    692546.62500000000     
+ Received Time:    692992.12500000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.52016461    
+ No E4D survey found for pflotran time:    692992.12500000000     
+ Received Time:    693883.12500000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.66929686    
+ No E4D survey found for pflotran time:    693883.12500000000     
+ Received Time:    694177.15500000003       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.70524132    
+ No E4D survey found for pflotran time:    694177.15500000003     
+ Received Time:    694765.21500000008       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.76440203    
+ No E4D survey found for pflotran time:    694765.21500000008     
+ Received Time:    695941.33500000008       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.84883571    
+ No E4D survey found for pflotran time:    695941.33500000008     
+ Received Time:    698293.57500000007       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.94776189    
+ No E4D survey found for pflotran time:    698293.57500000007     
+ Received Time:    699069.81420000002       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       1.96955824    
+ No E4D survey found for pflotran time:    699069.81420000002     
+ Received Time:    700622.29260000004       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.00381684    
+ No E4D survey found for pflotran time:    700622.29260000004     
+ Received Time:    703727.24940000009       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.04962516    
+ No E4D survey found for pflotran time:    703727.24940000009     
+ Received Time:    704751.88514400006       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.06084299    
+ No E4D survey found for pflotran time:    704751.88514400006     
+ Received Time:    706801.15663200011       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.07925987    
+ No E4D survey found for pflotran time:    706801.15663200011     
+ Received Time:    710899.69960800011       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.10553980    
+ No E4D survey found for pflotran time:    710899.69960800011     
+ Received Time:    712252.21879008017       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.11243558    
+ No E4D survey found for pflotran time:    712252.21879008017     
+ Received Time:    714957.25715424016       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.12400341    
+ No E4D survey found for pflotran time:    714957.25715424016     
+ Received Time:    720367.33388256014       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.14104795    
+ No E4D survey found for pflotran time:    720367.33388256014     
+ Received Time:    722152.65920290572       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.14574313    
+ No E4D survey found for pflotran time:    722152.65920290572     
+ Received Time:    725723.30984359689       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.15366626    
+ No E4D survey found for pflotran time:    725723.30984359689     
+ Received Time:    732864.61112497933       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.16540337    
+ No E4D survey found for pflotran time:    732864.61112497933     
+ Received Time:    735221.24054783548       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.16873264    
+ No E4D survey found for pflotran time:    735221.24054783548     
+ Received Time:    739934.49939354789       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.17429948    
+ No E4D survey found for pflotran time:    739934.49939354789     
+ Received Time:    749361.01708497270       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.18238020    
+ No E4D survey found for pflotran time:    749361.01708497270     
+ Received Time:    752471.76792314288       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.18469501    
+ No E4D survey found for pflotran time:    752471.76792314288     
+ Received Time:    758693.26959948323       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.18847179    
+ No E4D survey found for pflotran time:    758693.26959948323     
+ Received Time:    760746.36515267554       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.18961811    
+ No E4D survey found for pflotran time:    760746.36515267554     
+ Received Time:    764852.55625906016       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.19162393    
+ No E4D survey found for pflotran time:    764852.55625906016     
+ Received Time:    773064.93847182940       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.19475031    
+ No E4D survey found for pflotran time:    773064.93847182940     
+ Received Time:    775775.02460204321       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.19568539    
+ No E4D survey found for pflotran time:    775775.02460204321     
+ Received Time:    777600.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.19627738    
+ Executing E4D Simulation for Time:    777600.00000000000     
+ Received Time:    781249.95079591358       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.19733310    
+ No E4D survey found for pflotran time:    781249.95079591358     
+ Received Time:    783020.17226042773       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.19781542    
+ No E4D survey found for pflotran time:    783020.17226042773     
+ Received Time:    790320.07385225489       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.19942164    
+ No E4D survey found for pflotran time:    790320.07385225489     
+ Received Time:    793860.51678128319       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20011663    
+ No E4D survey found for pflotran time:    793860.51678128319     
+ Received Time:    797437.83047316549       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20074487    
+ No E4D survey found for pflotran time:    797437.83047316549     
+ Received Time:    804592.45785693009       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20176506    
+ No E4D survey found for pflotran time:    804592.45785693009     
+ Received Time:    806953.48489357240       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20207691    
+ No E4D survey found for pflotran time:    806953.48489357240     
+ Received Time:    811675.53896685701       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20261836    
+ No E4D survey found for pflotran time:    811675.53896685701     
+ Received Time:    821119.64711342624       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20345092    
+ No E4D survey found for pflotran time:    821119.64711342624     
+ Received Time:    824236.20280179405       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20370007    
+ No E4D survey found for pflotran time:    824236.20280179405     
+ Received Time:    830469.31417852978       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20411634    
+ No E4D survey found for pflotran time:    830469.31417852978     
+ Received Time:    842935.53693200124       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20471406    
+ No E4D survey found for pflotran time:    842935.53693200124     
+ Received Time:    847049.39044064679       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20488811    
+ No E4D survey found for pflotran time:    847049.39044064679     
+ Received Time:    855277.09745793790       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20516515    
+ No E4D survey found for pflotran time:    855277.09745793790     
+ Received Time:    864000.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20539594    
+ Executing E4D Simulation for Time:    864000.00000000000     
+ Received Time:    880455.41403458221       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20568395    
+ No E4D survey found for pflotran time:    880455.41403458221     
+ Received Time:    885885.70066599431       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20576525    
+ No E4D survey found for pflotran time:    885885.70066599431     
+ Received Time:    896746.27392881864       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20588684    
+ No E4D survey found for pflotran time:    896746.27392881864     
+ Received Time:    900330.26310555066       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20592284    
+ No E4D survey found for pflotran time:    900330.26310555066     
+ Received Time:    907498.24145901471       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20598221    
+ No E4D survey found for pflotran time:    907498.24145901471     
+ Received Time:    921834.19816594280       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20606422    
+ No E4D survey found for pflotran time:    921834.19816594280     
+ Received Time:    926565.06387922901       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20608807    
+ No E4D survey found for pflotran time:    926565.06387922901     
+ Received Time:    936026.79530580156       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20612478    
+ No E4D survey found for pflotran time:    936026.79530580156     
+ Received Time:    954950.25815894664       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20617151    
+ No E4D survey found for pflotran time:    954950.25815894664     
+ Received Time:    961195.00090048451       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20618439    
+ No E4D survey found for pflotran time:    961195.00090048451     
+ Received Time:    973684.48638356023       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20620322    
+ No E4D survey found for pflotran time:    973684.48638356023     
+ Received Time:    986173.97186663595       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20621681    
+ No E4D survey found for pflotran time:    986173.97186663595     
+ Received Time:    998663.45734971168       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20622683    
+ No E4D survey found for pflotran time:    998663.45734971168     
+ Received Time:    1011152.9428327874       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20623422    
+ No E4D survey found for pflotran time:    1011152.9428327874     
+ Received Time:    1023642.4283158631       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20623970    
+ No E4D survey found for pflotran time:    1023642.4283158631     
+ Received Time:    1036800.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20624375    
+ No E4D survey found for pflotran time:    1036800.0000000000     
+ Received Time:    1049289.4854830757       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20623994    
+ No E4D survey found for pflotran time:    1049289.4854830757     
+ Received Time:    1074268.4564492272       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20623159    
+ No E4D survey found for pflotran time:    1074268.4564492272     
+ Received Time:    1082511.5168680572       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20622849    
+ No E4D survey found for pflotran time:    1082511.5168680572     
+ Received Time:    1098997.6377057172       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20622230    
+ No E4D survey found for pflotran time:    1098997.6377057172     
+ Received Time:    1131969.8793810371       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20620990    
+ No E4D survey found for pflotran time:    1131969.8793810371     
+ Received Time:    1142850.7191338926       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20620537    
+ No E4D survey found for pflotran time:    1142850.7191338926     
+ Received Time:    1164612.3986396038       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20619655    
+ No E4D survey found for pflotran time:    1164612.3986396038     
+ Received Time:    1208135.7576510261       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20617890    
+ No E4D survey found for pflotran time:    1208135.7576510261     
+ Received Time:    1222498.4661247954       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20617294    
+ No E4D survey found for pflotran time:    1222498.4661247954     
+ Received Time:    1251223.8830723341       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20616078    
+ No E4D survey found for pflotran time:    1251223.8830723341     
+ Received Time:    1296000.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20614171    
+ Executing E4D Simulation for Time:    1296000.0000000000     
+ Received Time:    1353450.8338950775       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20611691    
+ No E4D survey found for pflotran time:    1353450.8338950775     
+ Received Time:    1468352.5016852324       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20606828    
+ No E4D survey found for pflotran time:    1468352.5016852324     
+ Received Time:    1506270.0520559836       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20605111    
+ No E4D survey found for pflotran time:    1506270.0520559836     
+ Received Time:    1555200.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20602894    
+ Executing E4D Simulation for Time:    1555200.0000000000     
+ Received Time:    1631035.1007415024       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20599484    
+ No E4D survey found for pflotran time:    1631035.1007415024     
+ Received Time:    1782705.3022245069       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20592737    
+ No E4D survey found for pflotran time:    1782705.3022245069     
+ Received Time:    1814400.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20591259    
+ Executing E4D Simulation for Time:    1814400.0000000000     
+ Received Time:    1864451.1664893916       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20588923    
+ No E4D survey found for pflotran time:    1864451.1664893916     
+ Received Time:    1964553.4994681745       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20584297    
+ No E4D survey found for pflotran time:    1964553.4994681745     
+ Received Time:    2164758.1654257406       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20575142    
+ No E4D survey found for pflotran time:    2164758.1654257406     
+ Received Time:    2332800.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20569372    
+ Executing E4D Simulation for Time:    2332800.0000000000     
+ Received Time:    2733209.3319151318       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20559835    
+ No E4D survey found for pflotran time:    2733209.3319151318     
+ Received Time:    2865344.4114471255       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20556498    
+ No E4D survey found for pflotran time:    2865344.4114471255     
+ Received Time:    3129614.5705111125       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20549846    
+ No E4D survey found for pflotran time:    3129614.5705111125     
+ Received Time:    3542400.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:   0.651834428       2.20539403    
+ Executing E4D Simulation for Time:    3542400.0000000000     
