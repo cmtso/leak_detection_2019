@@ -1,0 +1,345 @@
+﻿#Description: 3D groundwater flow and solute transport for Hatfield
+
+SIMULATION
+  SIMULATION_TYPE  HYDROGEOPHYSICS ### SUBSURFACE   ### HYDROGEOPHYSICS ###
+  PROCESS_MODELS
+    SUBSURFACE_FLOW flow
+      MODE RICHARDS
+    /
+    SUBSURFACE_TRANSPORT transport
+      GLOBAL_IMPLICIT
+    /
+  /
+END
+
+SUBSURFACE
+
+#=========================== chemistry ========================================
+CHEMISTRY
+  PRIMARY_SPECIES
+    Tracer
+  /
+  OUTPUT
+    TOTAL
+    all
+  /
+END
+
+#=========================== solver options ===================================
+TIMESTEPPER FLOW
+END
+
+NEWTON_SOLVER FLOW
+  ITOL_UPDATE 1.d0     ! Convergences with max change in pressure is 1 Pa.
+END
+
+LINEAR_SOLVER FLOW
+END
+
+NEWTON_SOLVER TRANSPORT
+END
+
+LINEAR_SOLVER TRANSPORT
+END
+
+#=========================== discretization ===================================
+GRID
+  TYPE STRUCTURED
+  NXYZ 30 33 32
+  ORIGIN -11.d0 -11d0 -16.d0
+
+  DXYZ
+  1.
+  1.
+  0.5
+  /
+END
+
+#=========================== fluid properties =================================
+FLUID_PROPERTY
+  DIFFUSION_COEFFICIENT 1.d-9
+END
+
+#=========================== material properties ==============================
+
+MATERIAL_PROPERTY layer1
+  ID 1
+  POROSITY 0.3d0
+  TORTUOSITY 0.5d0
+  CHARACTERISTIC_CURVES cc1
+  PERMEABILITY
+    PERM_ISO 1.2056E-14
+  /
+END
+
+MATERIAL_PROPERTY layer2
+  ID 2
+  POROSITY 0.32d0
+  TORTUOSITY 0.5d0
+  CHARACTERISTIC_CURVES cc2
+  PERMEABILITY
+    PERM_ISO 5.7870E-14
+  /
+END
+
+MATERIAL_PROPERTY layer3
+  ID 3
+  POROSITY 0.32d0
+  TORTUOSITY 0.5d0
+  CHARACTERISTIC_CURVES cc3
+  PERMEABILITY
+    PERM_ISO 4.8225E-13
+  /
+END
+
+#=========================== saturation functions =============================
+CHARACTERISTIC_CURVES cc1
+  SATURATION_FUNCTION VAN_GENUCHTEN
+    ALPHA 2.04487d-4
+    M 0.4737d0
+    LIQUID_RESIDUAL_SATURATION 0.05d0
+    MAX_CAPILLARY_PRESSURE 1.d8
+  /
+  PERMEABILITY_FUNCTION MUALEM_VG_LIQ
+    M 0.4737d0
+    LIQUID_RESIDUAL_SATURATION 0.05d0
+  /q
+END
+
+CHARACTERISTIC_CURVES cc2
+  SATURATION_FUNCTION VAN_GENUCHTEN
+    ALPHA 2.04487d-4
+    M 0.5454d0
+    LIQUID_RESIDUAL_SATURATION 0.04d0
+    MAX_CAPILLARY_PRESSURE 1.d8
+  /
+  PERMEABILITY_FUNCTION MUALEM_VG_LIQ
+    M 0.5454d0
+    LIQUID_RESIDUAL_SATURATION 0.04d0
+  /
+END
+
+CHARACTERISTIC_CURVES cc3
+  SATURATION_FUNCTION VAN_GENUCHTEN
+    ALPHA 1.0d-3
+    M 0.6d0
+    LIQUID_RESIDUAL_SATURATION 0.04d0
+    MAX_CAPILLARY_PRESSURE 1.d8
+  /
+  PERMEABILITY_FUNCTION MUALEM_VG_LIQ
+    M 0.6d0
+    LIQUID_RESIDUAL_SATURATION 0.04d0
+  /
+END
+
+#=========================== output options ===================================
+OUTPUT
+  SNAPSHOT_FILE
+    TIMES d 7 9 10 15 18 21 27 41	
+#    PERIODIC TIME 5 d between 5. d and 30. dddd
+#    PERIODIC TIME 1. y between 0. y and 10. y
+#    FORMAT TECPLOT BLOCK
+    FORMAT HDF5
+    PRINT_COLUMN_IDS
+    VARIABLES
+      LIQUID_PRESSURE
+      LIQUID_SATURATION
+      MATERIAL_ID_KLUDGE_FOR_VISIT
+    /
+  /
+  OBSERVATION_FILE
+    PERIODIC TIMESTEP 1
+  /
+  VELOCITY_AT_CENTER
+END
+#====================  integral flux ===========================================
+INTEGRAL_FLUX mass_flux		# mass flux into water table (entire domain)
+  COORDINATES
+    -11.d0 -3.d0 -16.d0
+     19.d0 -3.d0  0.d0 
+  /
+/
+#=========================== times ============================================
+TIME
+  FINAL_TIME 41.d0	 d		
+  INITIAL_TIMESTEP_SIZE 1.d-2 d
+  MAXIMUM_TIMESTEP_SIZE 0.1 y at 0. d        ! produces CFL ~<= 1.
+  #MAXIMUM_TIMESTEP_SIZE 1.d-2 d at 7.5 d        
+  #MAXIMUM_TIMESTEP_SIZE 0.1 y at 12.5 d        ! produces CFL ~<= 1.
+END
+
+#=========================== regions ==========================================
+REGION all
+  BLOCK 1 30 1 33 1 32
+/
+
+REGION layer3
+  BLOCK 1 30 1 33 1 26
+/
+
+REGION layer2
+  BLOCK 1 30 1 33 27 31
+/
+
+REGION layer1
+  BLOCK 1 30 1 33 32 32
+/
+
+REGION west
+  BLOCK 1 1 1 33 1 32
+  FACE west
+/
+
+REGION east
+  BLOCK 30 30 1 33 1 32
+  FACE east
+/
+
+
+REGION top
+  BLOCK 1 30 1 33 32 32
+  FACE top
+/
+
+REGION injection_well	# BH4, to confirm location
+  COORDINATES 
+    3.d0 4.d0  -3.5d0
+    3.d0 4.d0  -3.0d0
+  /
+END
+
+REGION Obs_pt_center
+  COORDINATE 0.d0 0.d0 -5.d0
+END
+
+
+
+
+#=========================== observation points ===============================
+OBSERVATION
+  REGION Obs_pt_center
+  AT_CELL_CENTER #is this necessary here?
+  VELOCITY #ditto?
+END
+ 
+ 
+#=========================== flow conditions ==================================
+FLOW_CONDITION initial
+  TYPE
+    PRESSURE HYDROSTATIC
+  /
+  INTERPOLATION LINEAR
+  DATUM 0.d0 0.d0 -12.d0		## water table 10m below surface
+  GRADIENT
+    PRESSURE -0.002 0. 0.
+  /
+  PRESSURE 101325.d0
+END
+
+
+
+FLOW_CONDITION injection
+  TYPE
+    RATE SCALED_VOLUMETRIC_RATE NEIGHBOR_PERM
+  /
+  SYNC_TIMESTEP_WITH_UPDATE
+  RATE LIST
+      TIME_UNITS day
+    DATA_UNITS m^3/day
+    0.  0.0
+    8.  0.408		#  0.72 = 30 L/h    #  8.  0.408  # 17 L/h		# day 8 is March 14, day 11 is March 17
+    12. 0.		# duration was 4 days
+   /
+ END
+
+FLOW_CONDITION recharge
+  TYPE
+    FLUX NEUMANN
+  /
+  FLUX 3.5d-4 m/day 
+/
+
+#=========================== transport conditions =============================
+TRANSPORT_CONDITION initial
+  TYPE DIRICHLET_ZERO_GRADIENT
+  CONSTRAINT initial
+    CONCENTRATIONS
+      Tracer  0.65d0 T
+    /
+  /
+END
+
+TRANSPORT_CONDITION west
+  TYPE DIRICHLET_ZERO_GRADIENT
+  CONSTRAINT west
+    CONCENTRATIONS
+      Tracer  0.65d0 T
+    /
+  /
+END
+
+TRANSPORT_CONDITION injection
+  TYPE DIRICHLET_ZERO_GRADIENT
+  CONSTRAINT injection
+    CONCENTRATIONS
+      Tracer  2.2d0   T
+    /
+  /
+END
+TRANSPORT_CONDITION recharge
+  TYPE DIRICHLET_ZERO_GRADIENT
+  CONSTRAINT recharge
+    CONCENTRATIONS
+      Tracer  0.65d0 T
+    /
+  /
+END
+#=========================== condition couplers ===============================
+# initial condition
+INITIAL_CONDITION
+  FLOW_CONDITION initial
+  TRANSPORT_CONDITION initial
+  REGION all
+END
+
+# west boundary condition
+BOUNDARY_CONDITION west
+  FLOW_CONDITION initial
+  TRANSPORT_CONDITION west
+  REGION west
+END
+
+
+# source 
+SOURCE_SINK injection_well
+  FLOW_CONDITION injection
+  TRANSPORT_CONDITION injection
+  REGION injection_well
+END
+
+# recharge
+BOUNDARY_CONDITION recharge
+  FLOW_CONDITION recharge
+  TRANSPORT_CONDITION recharge
+  REGION top
+/
+#=========================== stratigraphy couplers ============================
+STRATA
+  REGION layer1
+  MATERIAL layer1
+END
+
+STRATA
+  REGION layer2
+  MATERIAL layer2
+END
+
+STRATA
+  REGION layer3  
+  MATERIAL layer3
+END
+
+
+#========================== checkpointing
+
+END_SUBSURFACE

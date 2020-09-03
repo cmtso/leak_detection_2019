@@ -1,0 +1,162 @@
+ INITIALIZING E4D: FOUND e4d.inp
+ The specified mesh file is: sellafield.1.node
+ The specified survey file is: sellafield.srv
+ The specified conductivity list file is: sellafield.sig
+ The specified FMN (Archies parameter) file is: archies.txt
+ The specified conductivity list file is: list_file.txt
+ Number of electrodes:          160
+ E4D internal mesh translation file: sellafield.trn
+ The number of measurements per survey is:         1249
+ Number of conductivity values:       380457
+ Number of FMN values:       380457
+ Number of E4D Times:            6
+    1     432000.  sellafield.srv                            sellafield.sig                          
+    1     864000.  sellafield.srv                            sellafield.sig                          
+    1    1296000.  sellafield.srv                            sellafield.sig                          
+    1    1728000.  sellafield.srv                            sellafield.sig                          
+    1    2160000.  sellafield.srv                            sellafield.sig                          
+    1    2592000.  sellafield.srv                            sellafield.sig                          
+ Read Input Complete___________________________________
+ E4D mesh node file: sellafield.1.node
+ E4D mesh node file: sellafield.1.ele
+ ________________PF MESH PARAMETERS___________________
+ NX, NY, NZ:           66          62          40
+ xmin  xmax:   -7.05000019       58.9500008    
+ ymin  ymax:   -38.0299988       23.9699993    
+ zmin  zmax:   -1700.00000       2300.00000    
+
+ Total number of mapping weights:      4624651
+ Rank            1 :        58871
+ Rank            2 :        58538
+ Rank            3 :        58983
+ Rank            4 :        57922
+ Rank            5 :        58658
+ Rank            6 :        59175
+ Rank            7 :        58789
+ Rank            8 :        58598
+ Rank            9 :        58819
+ Rank           10 :        59048
+ Rank           11 :        57986
+ Rank           12 :        58386
+ Rank           13 :        58726
+ Rank           14 :        59297
+ Rank           15 :        58947
+ Rank           16 :        58711
+ Rank           17 :        58769
+ Rank           18 :        58922
+ Rank           19 :        59402
+ Rank           20 :        59110
+ Rank           21 :        59595
+ Rank           22 :        59623
+ Rank           23 :        59125
+ Rank           24 :        59534
+ Rank           25 :        60137
+ Rank           26 :        59227
+ Rank           27 :        59638
+ Rank           28 :        60117
+ Rank           29 :        58796
+ Rank           30 :        58843
+ Rank           31 :        59572
+ Rank           32 :        58728
+ Rank           33 :        59598
+ Rank           34 :        59531
+ Rank           35 :        59374
+ Rank           36 :        59927
+ Rank           37 :        60240
+ Rank           38 :        60496
+ Rank           39 :        59124
+ Rank           40 :        58828
+ Rank           41 :        60100
+ Rank           42 :        59606
+ Rank           43 :        59824
+ Rank           44 :        59761
+ Rank           45 :        59836
+ Rank           46 :        59688
+ Rank           47 :        59497
+ Rank           48 :        58959
+ Rank           49 :        60894
+ Rank           50 :        59550
+ Rank           51 :        60139
+ Rank           52 :        59322
+ Rank           53 :        59213
+ Rank           54 :        60091
+ Rank           55 :        58744
+ Rank           56 :        58855
+ Rank           57 :        59474
+ Rank           58 :        58448
+ Rank           59 :        58476
+ Rank           60 :        58128
+ Rank           61 :        56963
+ Rank           62 :        57139
+ Rank           63 :        55623
+ Rank           64 :        55694
+ Rank           65 :        55021
+ Rank           66 :        55233
+ Rank           67 :        53760
+ Rank           68 :        54699
+ Rank           69 :        54545
+ Rank           70 :        52051
+ Rank           71 :        51097
+ Rank           72 :        50758
+ Rank           73 :        51030
+ Rank           74 :        52488
+ Rank           75 :        50688
+ Rank           76 :        50132
+ Rank           77 :        49758
+ Rank           78 :        52052
+ Rank           79 :        53099
+ Rank           80 :        58506
+
+ Done setting up forward run ......
+     Number of nodes:        61236
+     Number of elements:       380457
+ Setup Forward Complete___________________________________
+ Setup Phase Complete___________________________________
+ Received Time:    864.00000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00284768E-03
+ No E4D survey found for pflotran time:    864.00000000000000     
+ Received Time:    2592.0000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00284768E-03
+ No E4D survey found for pflotran time:    2592.0000000000000     
+ Received Time:    6048.0000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00284768E-03
+ No E4D survey found for pflotran time:    6048.0000000000000     
+ Received Time:    12960.000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00284768E-03
+ No E4D survey found for pflotran time:    12960.000000000000     
+ Received Time:    26784.000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00284768E-03
+ No E4D survey found for pflotran time:    26784.000000000000     
+ Received Time:    54432.000000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00284768E-03
+ No E4D survey found for pflotran time:    54432.000000000000     
+ Received Time:    109728.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00284768E-03
+ No E4D survey found for pflotran time:    109728.00000000000     
+ Received Time:    220320.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00284768E-03
+ No E4D survey found for pflotran time:    220320.00000000000     
+ Received Time:    432000.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00284768E-03
+ Executing E4D Simulation for Time:    432000.00000000000     
+ Received Time:    653184.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00285048E-03
+ No E4D survey found for pflotran time:    653184.00000000000     
+ Received Time:    864000.00000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00285909E-03
+ Executing E4D Simulation for Time:    864000.00000000000     
+ Received Time:    1036800.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00269960E-03   1.00285909E-03
+ No E4D survey found for pflotran time:    1036800.0000000000     
+ Received Time:    1296000.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00233406E-03  0.997778475    
+ Executing E4D Simulation for Time:    1296000.0000000000     
+ Received Time:    1728000.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00234139E-03   1.00283051    
+ Executing E4D Simulation for Time:    1728000.0000000000     
+ Received Time:    2160000.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00234884E-03   1.00284767    
+ Executing E4D Simulation for Time:    2160000.0000000000     
+ Received Time:    2592000.0000000000       from PFLOTRAN
+ Min/Max Fluid Cond. Value:    1.00235641E-03   1.00284767    
+ Executing E4D Simulation for Time:    2592000.0000000000     
