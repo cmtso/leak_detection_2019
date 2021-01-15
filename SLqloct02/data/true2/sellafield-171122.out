@@ -1,0 +1,305 @@
+
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Initial Condition
+
+--------------------------------------------------------------------------------
+          Flow Condition:   initial
+     Transport Condition:   initial
+                  Region:   all
+--------------------------------------------------------------------------------
+
+  Flow Condition: initial
+    Synchronize time with update: no
+    Time units: yr
+    Length units: m
+      Datum:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Transient: no
+          Array Rank:  3
+
+    Sub Condition: pressure
+      Type: hydrostatic
+      Gradient:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Transient: no
+          Array Rank:  3
+      Data:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Transient: no
+          Array Rank:  1
+
+--------------------------------------------------------------------------------
+
+  Transport Condition: initial
+
+  Constraint: 
+
+  species       molality
+  Tracer        1.0028E-03
+
+
+--------------------------------------------------------------------------------
+
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Boundary Condition
+
+--------------------------------------------------------------------------------
+          Flow Condition:   initial
+     Transport Condition:   west
+                  Region:   west
+--------------------------------------------------------------------------------
+
+  Flow Condition: initial
+    Synchronize time with update: no
+    Time units: yr
+    Length units: m
+      Datum:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Transient: no
+          Array Rank:  3
+
+    Sub Condition: pressure
+      Type: hydrostatic
+      Gradient:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Transient: no
+          Array Rank:  3
+      Data:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Transient: no
+          Array Rank:  1
+
+--------------------------------------------------------------------------------
+
+  Transport Condition: west
+
+  Constraint: 
+
+  species       molality
+  Tracer        1.0028E-03
+
+
+--------------------------------------------------------------------------------
+
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Source Sink
+
+--------------------------------------------------------------------------------
+          Flow Condition:   injection
+     Transport Condition:   injection
+                  Region:   injection_well
+--------------------------------------------------------------------------------
+
+  Flow Condition: injection
+    Synchronize time with update: yes
+    Time units: yr
+    Length units: m
+      Datum:
+
+    Sub Condition: rate
+      Type: scaled volumetric rate
+      Gradient:
+      Data:
+        Dataset: Unnamed Ascii Dataset
+          Type: dataset_ascii_type
+          Is transient?: yes
+          Number of times:      2
+          Is cyclic?: no
+          Buffer:
+            Rank:  2
+            Dims:    1   2
+            Buffer Slice Size:   0
+          Array Rank:  1
+
+--------------------------------------------------------------------------------
+
+  Transport Condition: injection
+
+  Constraint: 
+
+  species       molality
+  Tracer        1.0028E+00
+
+
+--------------------------------------------------------------------------------
+
+ Requested processors and decomposition =   111, npx,y,z=   -1  -1  -1
+ Actual decomposition: npx,y,z=   37   3   1
+
+
+FLOW Time Stepper
+max steps: 999999
+max constant cumulative time steps: 5
+max cuts: 16
+ts reduction factor: 0.50000000000000000
+
+FLOW Newton Solver
+        atol:  1.0000E-50
+        rtol:  1.0000E-08
+        stol:  1.0000E-08
+        dtol: -2.0000E+00
+     maxnorm:  1.0000E+20
+   inftolres: -9.9900E+02
+   inftolupd:  1.0000E+00
+inftolrelupd: -9.9900E+02
+inftolsclres: -9.9900E+02
+    max iter:    50
+    min iter:     1
+        maxf: 10000
+
+matrix type:baij                
+precond. matrix type:baij                
+inexact newton: off
+print convergence: on
+print detailed convergence: off
+check infinity norm: on
+
+FLOW Linear Solver
+   solver:  bcgs
+  precond:  bjacobi
+     atol:  1.0000E-50
+     rtol:  1.0000E-05
+     dtol:  1.0000E+04
+ max iter:  10000
+
+TRAN Time Stepper
+max steps: 999999
+max constant cumulative time steps: 5
+max cuts: 16
+ts reduction factor: 0.50000000000000000
+
+TRAN Newton Solver
+        atol:  1.0000E-50
+        rtol:  1.0000E-08
+        stol:  1.0000E-08
+        dtol: -2.0000E+00
+     maxnorm:  1.0000E+20
+   inftolres: -9.9900E+02
+   inftolupd: -9.9900E+02
+inftolrelupd: -9.9900E+02
+inftolsclres: -9.9900E+02
+    max iter:    50
+    min iter:     1
+        maxf: 10000
+
+matrix type:baij                
+precond. matrix type:baij                
+inexact newton: off
+print convergence: on
+print detailed convergence: off
+check infinity norm: on
+
+TRAN Linear Solver
+   solver:  bcgs
+  precond:  bjacobi
+     atol:  1.0000E-50
+     rtol:  1.0000E-05
+     dtol:  1.0000E+04
+ max iter:  10000
+ Step      1 Time=  1.00000E-02 Dt=  1.00000E-02 [d] snes_conv_reason:   11
+  newton =   4 [       4] linear =   557 [       557] cuts =  0 [   0]
+  --> max chng: dpmx=   1.2449E+03
+ Step      1 Time=  1.00000E-02 Dt=  1.00000E-02 [d] snes_conv_reason:    4
+  newton =   1 [       1] linear =     2 [         2] cuts =  0 [   0]
+  --> max chng: dcmx=   4.6416E-11  dc/dt=   5.3723E-14 [mol/s]
+ Step      2 Time=  3.00000E-02 Dt=  2.00000E-02 [d] snes_conv_reason:   11
+  newton =   3 [       7] linear =   467 [      1024] cuts =  0 [   0]
+  --> max chng: dpmx=   3.6715E+02
+ Step      2 Time=  3.00000E-02 Dt=  2.00000E-02 [d] snes_conv_reason:    3
+  newton =   2 [       3] linear =     4 [         6] cuts =  0 [   0]
+  --> max chng: dcmx=   6.0453E-11  dc/dt=   3.4984E-14 [mol/s]
+ Step      3 Time=  7.00000E-02 Dt=  4.00000E-02 [d] snes_conv_reason:   11
+  newton =   3 [      10] linear =   414 [      1438] cuts =  0 [   0]
+  --> max chng: dpmx=   3.6183E+02
+ Step      3 Time=  7.00000E-02 Dt=  4.00000E-02 [d] snes_conv_reason:    3
+  newton =   2 [       5] linear =     4 [        10] cuts =  0 [   0]
+  --> max chng: dcmx=   6.6616E-11  dc/dt=   1.9276E-14 [mol/s]
+ Step      4 Time=  1.50000E-01 Dt=  8.00000E-02 [d] snes_conv_reason:   11
+  newton =   3 [      13] linear =   420 [      1858] cuts =  0 [   0]
+  --> max chng: dpmx=   3.6205E+02
+ Step      4 Time=  1.50000E-01 Dt=  8.00000E-02 [d] snes_conv_reason:    3
+  newton =   2 [       7] linear =     4 [        14] cuts =  0 [   0]
+  --> max chng: dcmx=   5.7773E-11  dc/dt=   8.3583E-15 [mol/s]
+ Step      5 Time=  3.10000E-01 Dt=  1.60000E-01 [d] snes_conv_reason:   11
+  newton =   3 [      16] linear =   419 [      2277] cuts =  0 [   0]
+  --> max chng: dpmx=   3.1996E+02
+ Step      5 Time=  3.10000E-01 Dt=  1.60000E-01 [d] snes_conv_reason:    4
+  newton =   1 [       8] linear =     2 [        16] cuts =  0 [   0]
+  --> max chng: dcmx=   3.9438E-11  dc/dt=   2.8529E-15 [mol/s]
+ Step      6 Time=  6.30000E-01 Dt=  3.20000E-01 [d] snes_conv_reason:   11
+  newton =   3 [      19] linear =   386 [      2663] cuts =  0 [   0]
+  --> max chng: dpmx=   3.0253E+02
+ Step      6 Time=  6.30000E-01 Dt=  3.20000E-01 [d] snes_conv_reason:    4
+  newton =   1 [       9] linear =     2 [        18] cuts =  0 [   0]
+  --> max chng: dcmx=   2.3701E-11  dc/dt=   8.5725E-16 [mol/s]
+ Step      7 Time=  1.27000E+00 Dt=  6.40000E-01 [d] snes_conv_reason:   11
+  newton =   3 [      22] linear =   394 [      3057] cuts =  0 [   0]
+  --> max chng: dpmx=   3.1620E+02
+ Step      7 Time=  1.27000E+00 Dt=  6.40000E-01 [d] snes_conv_reason:    4
+  newton =   1 [      10] linear =     1 [        19] cuts =  0 [   0]
+  --> max chng: dcmx=   1.5240E-11  dc/dt=   2.7560E-16 [mol/s]
+ Step      8 Time=  2.55000E+00 Dt=  1.28000E+00 [d] snes_conv_reason:   11
+  newton =   3 [      25] linear =   364 [      3421] cuts =  0 [   0]
+  --> max chng: dpmx=   3.6240E+02
+ Step      8 Time=  2.55000E+00 Dt=  1.28000E+00 [d] snes_conv_reason:    4
+  newton =   1 [      11] linear =     1 [        20] cuts =  0 [   0]
+  --> max chng: dcmx=   1.1178E-11  dc/dt=   1.0107E-16 [mol/s]
+ Step      9 Time=  5.00000E+00 Dt=  2.45000E+00 [d] snes_conv_reason:   11
+  newton =   3 [      28] linear =   301 [      3722] cuts =  0 [   0]
+  --> max chng: dpmx=   2.9894E+02
+ Step      9 Time=  5.00000E+00 Dt=  2.45000E+00 [d] snes_conv_reason:    4
+  newton =   1 [      12] linear =     1 [        21] cuts =  0 [   0]
+  --> max chng: dcmx=   8.8592E-12  dc/dt=   4.1852E-17 [mol/s]
+ Step     10 Time=  7.56000E+00 Dt=  2.56000E+00 [d] snes_conv_reason:   11
+  newton =   3 [      31] linear =   304 [      4026] cuts =  0 [   0]
+  --> max chng: dpmx=   2.0377E+02
+ Step     10 Time=  7.56000E+00 Dt=  2.56000E+00 [d] snes_conv_reason:    4
+  newton =   2 [      14] linear =     2 [        23] cuts =  0 [   0]
+  --> max chng: dcmx=   2.8309E-09  dc/dt=   1.2799E-14 [mol/s]
+ Step     11 Time=  1.00000E+01 Dt=  2.44000E+00 [d] snes_conv_reason:   11
+  newton =   2 [      33] linear =   132 [      4158] cuts =  0 [   0]
+  --> max chng: dpmx=   1.3402E+02
+ Step     11 Time=  1.00000E+01 Dt=  2.44000E+00 [d] snes_conv_reason:    3
+  newton =   2 [      16] linear =     2 [        25] cuts =  0 [   0]
+  --> max chng: dcmx=   1.1376E-08  dc/dt=   5.3960E-14 [mol/s]
+ Step     12 Time=  1.20000E+01 Dt=  2.00000E+00 [d] snes_conv_reason:   11
+  newton =   2 [      35] linear =   141 [      4299] cuts =  0 [   0]
+  --> max chng: dpmx=   7.9928E+01
+ Step     12 Time=  1.20000E+01 Dt=  2.00000E+00 [d] snes_conv_reason:    3
+  newton =   2 [      18] linear =     2 [        27] cuts =  0 [   0]
+  --> max chng: dcmx=   6.2869E-09  dc/dt=   3.6383E-14 [mol/s]
+ Step     13 Time=  1.50000E+01 Dt=  3.00000E+00 [d] snes_conv_reason:   11
+  newton =   5 [      40] linear =   492 [      4791] cuts =  0 [   0]
+  --> max chng: dpmx=   2.5996E+03
+ Step     13 Time=  1.50000E+01 Dt=  3.00000E+00 [d] snes_conv_reason:    3
+  newton =   2 [      20] linear =     9 [        36] cuts =  0 [   0]
+  --> max chng: dcmx=   9.9678E-01  dc/dt=   3.8456E-06 [mol/s]
+ Step     14 Time=  2.00000E+01 Dt=  5.00000E+00 [d] snes_conv_reason:   11
+  newton =   3 [      43] linear =   307 [      5098] cuts =  0 [   0]
+  --> max chng: dpmx=   1.4751E+02
+ Step     14 Time=  2.00000E+01 Dt=  5.00000E+00 [d] snes_conv_reason:    3
+  newton =   2 [      22] linear =     9 [        45] cuts =  0 [   0]
+  --> max chng: dcmx=   4.2607E-01  dc/dt=   9.8626E-07 [mol/s]
+ Step     15 Time=  2.50000E+01 Dt=  5.00000E+00 [d] snes_conv_reason:   11
+  newton =   3 [      46] linear =   262 [      5360] cuts =  0 [   0]
+  --> max chng: dpmx=   1.0831E+02
+ Step     15 Time=  2.50000E+01 Dt=  5.00000E+00 [d] snes_conv_reason:    3
+  newton =   2 [      24] linear =     9 [        54] cuts =  0 [   0]
+  --> max chng: dcmx=   2.6899E-01  dc/dt=   6.2266E-07 [mol/s]
+ Step     16 Time=  3.00000E+01 Dt=  5.00000E+00 [d] snes_conv_reason:   11
+  newton =   3 [      49] linear =   321 [      5681] cuts =  0 [   0]
+  --> max chng: dpmx=   9.1129E+01
+ Step     16 Time=  3.00000E+01 Dt=  5.00000E+00 [d] snes_conv_reason:    3
+  newton =   2 [      26] linear =     8 [        62] cuts =  0 [   0]
+  --> max chng: dcmx=   2.0117E-01  dc/dt=   4.6566E-07 [mol/s]
+
+ Wall Clock Time:  1.2888E+03 [sec]   2.1480E+01 [min]   3.5801E-01 [hr]

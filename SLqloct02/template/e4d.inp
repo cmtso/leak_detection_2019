@@ -1,0 +1,7 @@
+2			            run mode
+sellafield.1.node 	    mesh configuration file name
+sellafield.srv	  	      survey file
+sellafield.sig  		      conductivity file
+archies.txt       #archies law and temperature effect parameter file
+list_file.txt     #list of surveys to simulate and survey times
+	

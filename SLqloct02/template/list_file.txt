@@ -1,0 +1,7 @@
+6
+432000.0000		sellafield.srv		sellafield.sig
+864000.0000		sellafield.srv		sellafield.sig
+1296000.0000		sellafield.srv		sellafield.sig
+1728000.0000		sellafield.srv		sellafield.sig
+2160000.0000		sellafield.srv		sellafield.sig
+2592000.0000		sellafield.srv		sellafield.sig

@@ -1,0 +1,342 @@
+﻿#Description: 3D groundwater flow and solute transport for Sellafield (from TRAFFIC)
+
+SIMULATION
+  SIMULATION_TYPE  HYDROGEOPHYSICS ### SUBSURFACE   ### HYDROGEOPHYSICS ###
+ # SIMULATION_TYPE  SUBSURFACE   ### HYDROGEOPHYSICS ###
+  PROCESS_MODELS
+    SUBSURFACE_FLOW flow
+      MODE RICHARDS
+    /
+    SUBSURFACE_TRANSPORT transport
+      GLOBAL_IMPLICIT
+    /
+  /
+skip
+  CHECKPOINT
+    PERIODIC TIMESTEP 50
+    PERIODIC TIME 2 yr
+  /
+  #RESTART regional_doublet-restart.chk 0.d0
+noskip
+END
+
+SUBSURFACE
+
+#=========================== chemistry ========================================
+CHEMISTRY
+  PRIMARY_SPECIES
+    Tracer
+  /
+  OUTPUT
+    TOTAL
+    all
+  /
+END
+
+#=========================== solver options ===================================
+TIMESTEPPER FLOW
+END
+
+NEWTON_SOLVER FLOW
+  ITOL_UPDATE 1.d0     ! Convergences with max change in pressure is 1 Pa.
+END
+
+LINEAR_SOLVER FLOW
+END
+
+NEWTON_SOLVER TRANSPORT
+END
+
+LINEAR_SOLVER TRANSPORT
+END
+
+#=========================== discretization ===================================
+GRID
+  TYPE STRUCTURED
+  NXYZ 66 62 40
+  BOUNDS
+    -7.05d0 -38.03d0 -17.d0
+    58.95d0 23.97d0 23.d0 
+  /
+END
+
+#=========================== fluid properties =================================
+FLUID_PROPERTY
+  DIFFUSION_COEFFICIENT 1.d-9
+END
+
+#=========================== material properties ==============================
+MATERIAL_PROPERTY made_ground	#green
+  ID 1
+  POROSITY 0.2d0
+  TORTUOSITY 0.5d0
+  CHARACTERISTIC_CURVES cc1
+  PERMEABILITY
+    PERM_X 4.4427E-10
+    PERM_Y 4.4427E-10
+    PERM_Z 2.22135E-11
+  /
+END
+
+MATERIAL_PROPERTY sandy_drift	#yellow
+  ID 2
+  POROSITY 0.2d0
+  TORTUOSITY 0.5d0
+  CHARACTERISTIC_CURVES cc1
+  PERMEABILITY
+    PERM_X 8.8854E-10
+    PERM_Y 8.8854E-10
+    PERM_Z 4.4427E-11
+  /
+END
+
+MATERIAL_PROPERTY clayey_drift	#red
+  ID 3
+  POROSITY 0.2d0
+  TORTUOSITY 0.5d0
+  CHARACTERISTIC_CURVES cc1
+  PERMEABILITY
+    PERM_X 8.8854E-12
+    PERM_Y 8.8854E-12
+    PERM_Z 9.359288E-14
+  /
+END
+
+MATERIAL_PROPERTY sandstone		#blue
+  ID 4
+  POROSITY 0.085d0
+  TORTUOSITY 0.5d0
+  CHARACTERISTIC_CURVES cc1
+  PERMEABILITY
+    PERM_X 8.29304E-10
+    PERM_Y 8.29304E-10
+    PERM_Z 8.29304E-10
+  /
+END
+
+MATERIAL_PROPERTY weathered_zone	#pink
+  ID 5
+  POROSITY 0.085d0
+  TORTUOSITY 0.5d0
+  CHARACTERISTIC_CURVES cc1
+  PERMEABILITY
+    PERM_X 8.29304E-10
+    PERM_Y 8.29304E-10
+    PERM_Z 8.29304E-10
+  /
+END
+
+MATERIAL_PROPERTY msss_foundation        #grey
+  ID 6
+  POROSITY 0.05d0
+  TORTUOSITY 0.5d0
+  CHARACTERISTIC_CURVES cc1
+  PERMEABILITY
+    PERM_X 8.29304E-15
+    PERM_Y 8.29304E-15
+    PERM_Z 8.29304E-15
+  /
+END
+
+
+#=========================== saturation functions =============================
+CHARACTERISTIC_CURVES cc1
+  SATURATION_FUNCTION VAN_GENUCHTEN
+    ALPHA 1.d-4  
+    M 0.5d0
+    LIQUID_RESIDUAL_SATURATION 0.1d0
+    MAX_CAPILLARY_PRESSURE 1.d8
+  /
+  PERMEABILITY_FUNCTION MUALEM_VG_LIQ
+    M 0.5d0
+    LIQUID_RESIDUAL_SATURATION 0.1d0
+  /
+END
+
+#=========================== output options ===================================
+OUTPUT
+  SNAPSHOT_FILE
+    PERIODIC TIME 5 d between 5. d and 30. d
+#    PERIODIC TIME 1. y between 0. y and 10. y
+#    FORMAT TECPLOT BLOCK
+    FORMAT HDF5
+    PRINT_COLUMN_IDS
+    VARIABLES
+      LIQUID_PRESSURE
+      LIQUID_SATURATION
+      MATERIAL_ID_KLUDGE_FOR_VISIT
+    /
+  /
+  OBSERVATION_FILE
+    PERIODIC TIMESTEP 1
+  /
+  VELOCITY_AT_CENTER
+END
+#====================  integral flux ===========================================
+INTEGRAL_FLUX mass_flux		# mass flux into water table (entire domain)
+  COORDINATES
+    30.95d0 -25.03d0 -17.d0
+    40.95d0 -25.03d0  23.d0 
+  /
+/
+#=========================== times ============================================
+TIME
+  FINAL_TIME 30.d0	 d		# from 6/2/2013 = 509 days
+  INITIAL_TIMESTEP_SIZE 1.d-2 d
+  MAXIMUM_TIMESTEP_SIZE 0.1 y        ! produces CFL ~<= 1.
+END
+
+#=========================== regions ==========================================
+REGION all
+  COORDINATES
+    -7.05d0 -38.03d0 -17.d0
+    58.95d0 23.97d0 23.d0 
+  /
+END
+
+REGION west
+  COORDINATES
+    -7.05d0 -38.03d0 -17.d0
+    -7.05d0 23.97d0 23.d0 
+  /
+  FACE WEST
+END
+
+REGION east
+  COORDINATES
+    58.95d0 -38.03d0 -17.d0
+    58.95d0 23.97d0 23.d0 
+  /
+  FACE EAST
+END
+
+REGION top
+  COORDINATES
+    -7.05d0 -38.03d0 23.d0
+    58.95d0 23.97d0 23.d0
+  /
+  FACE TOP
+END
+
+REGION injection_well
+  COORDINATES # BH4, outside ERT cell 
+    20.d0 -10.d0 18.1d0
+    20.d0 -10.d0 18.d0
+  /
+END
+
+REGION Obs_pt_center
+  COORDINATE 30.d0 -36.d0 10.d0
+END
+
+REGION Obs_pt_center_lower
+  COORDINATE 30.d0 -36.d0 -10.d0
+END
+
+
+#=========================== observation points ===============================
+OBSERVATION
+  REGION Obs_pt_center
+  AT_CELL_CENTER #is this necessary here?
+  VELOCITY #ditto?
+END
+ 
+OBSERVATION
+  REGION Obs_pt_center_lower
+  AT_CELL_CENTER
+  VELOCITY
+END
+ 
+ 
+#=========================== flow conditions ==================================
+FLOW_CONDITION initial
+  TYPE
+    PRESSURE HYDROSTATIC
+  /
+  INTERPOLATION LINEAR
+  DATUM 0.d0 0.d0 17.d0		## water table 6m below surface
+  GRADIENT
+    PRESSURE -0.002 0. 0.
+  /
+  PRESSURE 101325.d0
+END
+
+
+
+FLOW_CONDITION injection
+  TYPE
+    RATE SCALED_VOLUMETRIC_RATE NEIGHBOR_PERM
+  /
+  SYNC_TIMESTEP_WITH_UPDATE
+  RATE LIST
+      TIME_UNITS day
+    DATA_UNITS m^3/day
+    0.  0.0
+    12. 8.0
+    #60. 0.
+   /
+ END
+
+
+#=========================== transport conditions =============================
+TRANSPORT_CONDITION initial
+  TYPE DIRICHLET_ZERO_GRADIENT
+  CONSTRAINT initial
+    CONCENTRATIONS
+      Tracer  1.d-3 T
+    /
+  /
+END
+
+TRANSPORT_CONDITION west
+  TYPE DIRICHLET_ZERO_GRADIENT
+  CONSTRAINT west
+    CONCENTRATIONS
+      Tracer  1.d-3 T
+    /
+  /
+END
+
+TRANSPORT_CONDITION injection
+  TYPE DIRICHLET_ZERO_GRADIENT
+  CONSTRAINT injection
+    CONCENTRATIONS
+      Tracer  1.d0   T
+    /
+  /
+END
+
+#=========================== condition couplers ===============================
+# initial condition
+INITIAL_CONDITION
+  FLOW_CONDITION initial
+  TRANSPORT_CONDITION initial
+  REGION all
+END
+
+# west boundary condition
+BOUNDARY_CONDITION west
+  FLOW_CONDITION initial
+  TRANSPORT_CONDITION west
+  REGION west
+END
+
+
+# source 
+SOURCE_SINK injection_well
+  FLOW_CONDITION injection
+  TRANSPORT_CONDITION injection
+  REGION injection_well
+END
+
+
+#=========================== stratigraphy couplers ============================
+STRATA
+  #REGION all # no need if using h5
+  MATERIAL material_and_regions6.h5 #
+  #MATERIAL sandy_drift
+END
+
+#========================== checkpointing
+
+END_SUBSURFACE
